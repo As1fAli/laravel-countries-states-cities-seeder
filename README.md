@@ -13,15 +13,10 @@ This is not package, this just includes countries, states, cities migrations and
 ## Requirements
 * PHP 7 OR Above
 * Laravel 7 or Above
-* memory_limit of PHP running in terminal should be 350MB or Above.
 
 # Installation
-1. In your php.ini file of PHP running in your terminal, set your memory_limit to 350MB `memory_limit = 350M `
-```
-You can revert this change after seeding is completed.
-```
-2. Clone repository and move migrations and seeders into relevant directories.
-3. Register Seeders into `database/seeders/DatabaseSeeder.php` by adding these line in run method
+1. Clone repository and move migrations and seeders into relevant directories.
+2. Register Seeders into `database/seeders/DatabaseSeeder.php` by adding these line in run method
 ```
 $this->call(CountriesTableSeeder::class);
 $this->call(StatesTableSeeder::class);
@@ -31,8 +26,11 @@ $this->call(CitiesTableChunkThreeSeeder::class);
 $this->call(CitiesTableChunkFourSeeder::class);
 $this->call(CitiesTableChunkFiveSeeder::class);
 ```
-4. Run your migrations and seed the data
-5. If you face memory exuasted error, increase `memory_limit` in `php.ini` file.
+3. Run your migrations.
+5. Seed the data using `php memory_limit=350M artisan db:seed` command
+```
+If You face memory exausted error, increase value of memory_limit in this command.
+```
 
 ## Credits
 * [Inverse seed generator (iSeed)](https://github.com/orangehill/iseed)

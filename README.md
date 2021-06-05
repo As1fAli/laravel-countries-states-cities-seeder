@@ -27,7 +27,7 @@ $this->call(CitiesTableChunkFourSeeder::class);
 $this->call(CitiesTableChunkFiveSeeder::class);
 ```
 3. Run your migrations.
-5. Seed the data using `php memory_limit=350M artisan db:seed` command
+5. Seed the data using `php -d memory_limit=400M artisan db:seed` command
 ```
 If You face memory exausted error, increase value of memory_limit in this command.
 ```

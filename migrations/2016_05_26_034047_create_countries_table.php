@@ -15,6 +15,7 @@ class CreateCountriesTable extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->id();
+            $table->integer('weight')->default(0);
             $table->string('name');
             $table->string('iso3');
             $table->string('iso2');
@@ -34,6 +35,7 @@ class CreateCountriesTable extends Migration
             $table->text('emojiU');
             $table->boolean('flag')->default(false);
             $table->text('wikiDataId')->nullable();
+            $table->json('settings')->nullable();
             $table->timestamps();
         });
     }
